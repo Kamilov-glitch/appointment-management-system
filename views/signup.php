@@ -9,7 +9,7 @@ include "partials/header.php";
             <h4 class="modal-title">Create your new profile</h4>
         </div>
         <div class="card-body">
-            <form action="" method="POST" class="form-horizontal">
+            <form action="../logic/l-signup.php" method="POST" class="form-horizontal">
                 <div class="form-group">
                     <label for="name" class="col-sm-2 control-label">Name:</label>
                     <input type="text" name="name">

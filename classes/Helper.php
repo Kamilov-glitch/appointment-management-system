@@ -1,5 +1,7 @@
 <?php
 
+include_once "Database.php";
+
 class Helper
 {
     private $db;
