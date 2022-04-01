@@ -28,10 +28,10 @@ class Database
         return $stmt->fetch();
     }
 
-    public function getAll($sql, $pholder, $value)
+    public function getAllUsers($sql, $pholder = '', $value = '')
     {
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue($pholder, $value);
+        if (pholder !== '') $stmt->bindValue($pholder, $value);
         return $stmt->fetchAll();
     }
 

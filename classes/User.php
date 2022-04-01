@@ -33,5 +33,10 @@ class User
         $this->db->execute();
     }
 
+    public function getAllUsers() {
+        $sql = "SELECT * FROM users";
+        return $this->db->getAll($sql);
+    }
+
 
 }
