@@ -29,8 +29,11 @@ include "partials/header.php";
                     <input type="text" name="username">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password">Password </label>
                     <input type="password" name="password">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success">Sign in</button>
                 </div>
             </form>
             <div class="card-footer">
