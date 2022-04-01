@@ -12,10 +12,12 @@ class Database
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     }
 
-    public function execute($sql, $pholder, $value)
+    public function execute($sql, $values)
     {
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue($pholder, $value);
+        foreach ($values as $value) {
+            $stmt->bindValue($value[0], $value[1]);
+        }
         $stmt->execute();
     }
 
