@@ -38,6 +38,18 @@ if (isset($_POST['name']))
         $errors['password'] = 'Password must be between 6 and 16 characters';
     }
 
+    if (!$h->isSecure($password)) {
+        $errors['password'] = "Password must contain one lower, one upper case character and a numbers";
+    }
 
+    if ($h->exists($username)) {
+        $errors['username'] = "This username is already in use, please choose another one";
+    }
+
+    if ($h->isEmpty($errors)) {
+        $user = new User($name, $username, $email, $password);
+        $user->addUserToDatabase();
+        header("Location: ../index.php");
+    }
 
 }
