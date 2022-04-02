@@ -20,8 +20,8 @@
             </a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span><i class="fas fa-user"></i></span> Sign Up</a></li>
-            <li style="margin-left: 13px"><a href="#"><span><i class="fas fa-sign-in-alt"></i></span> Login</a></li>
+            <li><a href="views/signup.php"><span><i class="fas fa-user"></i></span> Sign Up</a></li>
+            <li style="margin-left: 13px"><a href="views/login.php"><span><i class="fas fa-sign-in-alt"></i></span> Login</a></li>
         </ul>
     </div>
 </nav>

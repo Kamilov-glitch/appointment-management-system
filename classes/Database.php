@@ -31,7 +31,7 @@ class Database
     public function getAllUsers($sql, $pholder = '', $value = '')
     {
         $stmt = $this->pdo->prepare($sql);
-        if (pholder !== '') $stmt->bindValue($pholder, $value);
+        if ($pholder !== '') $stmt->bindValue($pholder, $value);
         return $stmt->fetchAll();
     }
 

@@ -1,22 +1,30 @@
 <?php
+session_start();
 include_once "../classes/Helper.php";
 include_once "../classes/User.php";
 $h = new Helper();
 
-if (isset($_POST['name']))
+
+
+$errors = [
+    'name' => '',
+    'username' => '',
+    'email' => '',
+    'password' => '',
+    'all' => ''
+];
+
+//$_SESSION['errors'] = $errors;
+
+if (isset($_POST['submit']))
 {
+
+
     $name = $_POST['name'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm-password'];
-    $errors = [
-        'name' => '',
-        'username' => '',
-        'email' => '',
-        'password' => '',
-        'all' => ''
-    ];
 
     if ($h->isEmpty(array($name, $username, $email, $password, $confirm_password))) {
         $errors['all'] = 'All fields must be filled';
@@ -46,10 +54,23 @@ if (isset($_POST['name']))
         $errors['username'] = "This username is already in use, please choose another one";
     }
 
-    if ($h->isEmpty($errors)) {
+    if (!$h->isNotEmpty($errors)) {
         $user = new User($name, $username, $email, $password);
         $user->addUserToDatabase();
+        $errors = [
+            'name' => '',
+            'username' => '',
+            'email' => '',
+            'password' => '',
+            'all' => ''
+        ];
         header("Location: ../index.php");
+    } else {
+        $_SESSION['errors'] = $errors;
+        $_SESSION['name'] = $name;
+//        var_dump($errors);
+//        var_dump($_SESSION['errors']);
+        header("Location: ../views/signup.php");
     }
 
 }

@@ -13,9 +13,9 @@ class Helper
 
     public function exists($username)
     {
-        $sql = "SELECT count(username) FROM users WHERE username = :username";
-        $count = $this->db->getAll($sql, ":username", $username);
-        return count > 0;
+        $sql = "SELECT COUNT(username) FROM users WHERE username = :username";
+        $count = $this->db->getAllUsers($sql, ":username", $username);
+        return count($count) > 0;
     }
 
     public function passwordsMatch($pw1, $pw2) {
@@ -30,9 +30,17 @@ class Helper
         return false;
     }
 
+    public function isNotEmpty($array)
+    {
+        foreach($array as $i) {
+            if ($i !== '') return true;
+        }
+        return false;
+    }
+
     public function isValidLength($field)
     {
-        return srtlen($field) > 6 && strlen($field) < 16;
+        return (strlen($field) > 6 && strlen($field) < 16);
     }
 
     public function isValidEmail($email)

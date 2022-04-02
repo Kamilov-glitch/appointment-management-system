@@ -31,12 +31,12 @@ class User
             array(":email", $this->email),
             array(":password", $this->password)
         );
-        $this->db->execute();
+        $this->db->execute($sql, $values);
     }
 
     public function getAllUsers() {
         $sql = "SELECT * FROM users";
-        return $this->db->getAll($sql);
+        return $this->db->getAllUsers($sql);
     }
 
 
