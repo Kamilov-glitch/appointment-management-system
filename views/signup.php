@@ -26,26 +26,26 @@ $errors = $_SESSION['errors'];
                 <div class="form-group">
                     <label for="username" class="col-sm-2 control-label">Username:</label>
                     <input type="text" name="username">
-                    <div class = "text-danger"><?php echo $errors['username'] ?></div>
+                    <div class = "text-danger"><small><?php echo $errors['username'] ?></small></div>
                 </div>
 
                 <div class="form-group">
                     <label for="name" class="col-sm-2 control-label">Email:</label>
                     <input type="text" name="email">
-                    <div class = "text-danger"><?php echo $errors['email'] ?></div>
+                    <div class = "text-danger"><small><?php echo $errors['email'] ?></small></div>
                 </div>
 
                 <div class="form-group">
                     <label for="password" class="col-sm-2 control-label">Password:</label>
                     <input type="password" name="password">
-                    <div class = "text-danger"><?php echo $errors['password'] ?></div>
+                    <div class = "text-danger"><small><?php echo $errors['password'] ?></small></div>
                 </div>
 
                 <div class="form-group">
                     <label for="confirm-password" class="col-sm-2 control-label">Password:</label>
                     <input type="password" name="confirm-password">
                 </div>
-                <div class = "text-danger"><?php echo $errors['all'] ?></div>
+                <div class = "text-danger"><small><?php echo $errors['all'] ?></small></div>
 
                 <div class="form-group">
                     <button class="btn btn-success" name="submit">Register</button>
