@@ -31,6 +31,11 @@ include "partials/header.php";
                 </div>
 
                 <div class="form-group">
+                    <label for="confirm-password" class="col-sm-2 control-label">Password:</label>
+                    <input type="password" name="confirm-password">
+                </div>
+
+                <div class="form-group">
                     <button class="btn btn-success">Register</button>
                 </div>
 
