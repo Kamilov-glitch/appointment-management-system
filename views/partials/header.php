@@ -17,7 +17,11 @@
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
-                selectable: true
+                selectable: true,
+                dateClick: function(info) {
+                    console.log('clicked on ' + info.date);
+                    info.dayEl.style.backgroundColor = 'red';
+                }
             });
             calendar.render();
         });
