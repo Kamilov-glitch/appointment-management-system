@@ -9,4 +9,6 @@ include_once "views/partials/header.php";
 
 ?>
 
+<div id='calendar'></div>
+
 <?php include_once "views/partials/footer.php"?>

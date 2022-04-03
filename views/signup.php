@@ -5,8 +5,7 @@ include_once "../logic/l-signup.php";
 include_once "../classes/Helper.php";
 
 $h = new Helper();
-
-$errors = $_SESSION['errors'];
+if (isset($_SESSION['errors']))  $errors = $_SESSION['errors'];
 
 ?>
 <div class="container">
