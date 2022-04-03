@@ -25,6 +25,7 @@ class Database
     {
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue($pholder, $value);
+        $stmt->execute();
         return $stmt->fetch();
     }
 

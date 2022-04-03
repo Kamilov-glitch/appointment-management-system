@@ -10,7 +10,7 @@ include "partials/header.php";
             <h4 class="modal-title">Log in into your account</h4>
         </div>
         <div class="card-body">
-            <form action="" method="POST" class="form-horizontal">
+            <form action="../logic/l-login.php" method="POST" class="form-horizontal">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" name="username">
@@ -20,7 +20,7 @@ include "partials/header.php";
                     <input type="password" name="password">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-success">Sign in</button>
+                    <button class="btn btn-success" name="submit" type="submit">Sign in</button>
                 </div>
             </form>
             <div class="card-footer">
