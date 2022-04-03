@@ -64,12 +64,10 @@ if (isset($_POST['submit']))
             'password' => '',
             'all' => ''
         ];
+        session_unset();
         header("Location: ../index.php");
     } else {
         $_SESSION['errors'] = $errors;
-        $_SESSION['name'] = $name;
-//        var_dump($errors);
-//        var_dump($_SESSION['errors']);
         header("Location: ../views/signup.php");
     }
 

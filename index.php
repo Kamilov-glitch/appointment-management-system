@@ -1,8 +1,11 @@
 <?php
-
+session_start();
 include_once "views/partials/header.php";
-
-echo "Hola, que tal!";
+if (!isset($_SESSION['username'])) {
+    header("Location: views/login.php");
+}
+$username = $_SESSION['username'];
+echo "Hola $username";
 
 ?>
 

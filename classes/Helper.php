@@ -65,11 +65,14 @@ class Helper
         return true;
     }
 
+    public function isValidUsername($username)
+    {
+        return $this->exists($username);
+    }
+
     public function isValidPassword($username, $pw) {
         $sql = "SELECT password FROM users WHERE username = :username";
-        var_dump($username);
         $result = $this->db->getOne($sql, ":username", $username);
-        var_dump($result);
         return isset($result['password']) && password_verify($pw, $result['password']);
     }
 

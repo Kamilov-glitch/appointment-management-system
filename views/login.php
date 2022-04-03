@@ -1,7 +1,8 @@
 <?php
 
 include "partials/header.php";
-
+session_start();
+$errors = $_SESSION['errors'];
 ?>
 
 <div class="container">
@@ -22,6 +23,7 @@ include "partials/header.php";
                 <div class="form-group">
                     <button class="btn btn-success" name="submit" type="submit">Sign in</button>
                 </div>
+                <div class = "text-danger"><small><?php echo $errors ?></small></div>
             </form>
             <div class="card-footer">
                 <p class="card-text">New here?
