@@ -1,7 +1,5 @@
 <?php
 
-
-
 include_once "partials/header.php";
 include_once "../logic/l-signup.php";
 include_once "../classes/Helper.php";

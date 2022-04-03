@@ -2,7 +2,11 @@
 
 include "partials/header.php";
 session_start();
-$errors = $_SESSION['errors'];
+
+if (isset($_SESSION['errors'])) {
+    $errors = $_SESSION['errors'];
+}
+
 ?>
 
 <div class="container">
@@ -23,7 +27,7 @@ $errors = $_SESSION['errors'];
                 <div class="form-group">
                     <button class="btn btn-success" name="submit" type="submit">Sign in</button>
                 </div>
-                <div class = "text-danger"><small><?php echo $errors ?></small></div>
+                <div class = "text-danger"><small><?php if (isset($_SESSION['errors'])) echo $errors ?></small></div>
             </form>
             <div class="card-footer">
                 <p class="card-text">New here?
